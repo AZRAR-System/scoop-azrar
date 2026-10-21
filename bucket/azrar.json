@@ -1,0 +1,25 @@
+{
+    "version": "3.17.1",
+    "description": "Real estate office management system (contracts, installments, commissions). Arabic-first. | نظام إدارة مكاتب العقارات",
+    "homepage": "https://azrar-systems.com",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://azrar-systems.com/terms.html"
+    },
+    "url": "https://github.com/AZRAR-System/azrar-releases/releases/download/v3.17.1/AZRAR-Setup-3.17.1.exe",
+    "hash": "495d97a16a6a4bd06c6414c99c4732a88232a7242b6b13ab0209adcc43247d1f",
+    "installer": {
+        "file": "AZRAR-Setup-3.17.1.exe",
+        "args": ["/S"]
+    },
+    "uninstaller": {
+        "script": "Start-Process -FilePath \"$env:ProgramFiles\\AZRAR\\Uninstall AZRAR.exe\" -ArgumentList '/S' -Wait"
+    },
+    "checkver": {
+        "url": "https://github.com/AZRAR-System/azrar-releases/releases/latest",
+        "regex": "tag/v([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/AZRAR-System/azrar-releases/releases/download/v$version/AZRAR-Setup-$version.exe"
+    }
+}
