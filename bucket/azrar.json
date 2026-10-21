@@ -9,11 +9,10 @@
     "url": "https://github.com/AZRAR-System/azrar-releases/releases/download/v3.17.1/AZRAR-Setup-3.17.1.exe",
     "hash": "495d97a16a6a4bd06c6414c99c4732a88232a7242b6b13ab0209adcc43247d1f",
     "installer": {
-        "file": "AZRAR-Setup-3.17.1.exe",
-        "args": ["/S"]
+        "script": "Start-Process -FilePath \"$dir\\AZRAR-Setup-$version.exe\" -ArgumentList '/S' -Verb RunAs -Wait"
     },
     "uninstaller": {
-        "script": "Start-Process -FilePath \"$env:ProgramFiles\\AZRAR\\Uninstall AZRAR.exe\" -ArgumentList '/S' -Wait"
+        "script": "Start-Process -FilePath \"$env:ProgramFiles\\AZRAR\\Uninstall AZRAR.exe\" -ArgumentList '/S' -Verb RunAs -Wait"
     },
     "checkver": {
         "url": "https://github.com/AZRAR-System/azrar-releases/releases/latest",
